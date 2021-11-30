@@ -1,0 +1,22 @@
+--USER DEFINED EXCEPTION
+DECLARE
+      x INT:=:x;
+      y INT:=:y;
+      res FLOAT;
+      ROHIT EXCEPTION;
+      JHA EXCEPTION;
+BEGIN
+     IF y=0 THEN
+          RAISE ROHIT;
+     ELSIF y>x THEN
+          RAISE JHA;
+     ELSE 
+         res:=x/y;
+         DBMS_OUTPUT.PUT_LINE('x/y='||res);
+     END IF;
+EXCEPTION
+       WHEN ROHIT THEN 
+                  DBMS_OUTPUT.PUT_LINE('ERROR! CHANGE THE VALUE OF Y');
+       WHEN JHA THEN
+                  DBMS_OUTPUT.PUT_LINE('ERROR! Y CAN NOT BE GREATER THAN X');
+END;
