@@ -1,0 +1,16 @@
+DECLARE 
+      ROHIT EXCEPTION;
+      PRAGMA EXCEPTION_INIT(ROHIT, -20115);
+      n INT:=10;
+BEGIN
+     FOR i IN 1..n
+     LOOP 
+        DBMS_OUTPUT.PUT_LINE(i*i);
+        IF i*i=49 THEN
+               RAISE ROHIT;
+        END IF;
+     END LOOP;
+EXCEPTION 
+       WHEN ROHIT THEN 
+              DBMS_OUTPUT.PUT_LINE('REST OF THE SQUARE CAN NOT BE CALCULATED...');
+END;
