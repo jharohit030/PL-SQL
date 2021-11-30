@@ -1,0 +1,17 @@
+--RAISE _APPLICATION _ERROR
+DECLARE
+      ROHIT EXCEPTION;
+      n INT :=10;
+BEGIN
+     FOR i IN 1..n
+     LOOP
+         DBMS_OUTPUT.PUT_LINE(i*i);
+      /*   IF i*i =49 THEN
+               RAISE ROHIT;
+  
+        END IF;*/
+     END LOOP;
+EXCEPTION
+       WHEN ROHIT THEN
+                  RAISE_APPLICATION_ERROR(-20123,'MY SECTION IS K20YR');
+END;
