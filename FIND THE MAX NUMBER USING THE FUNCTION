@@ -1,0 +1,22 @@
+--PL/SQL FUNCTION TO FIND THE MAX NUMBER
+DECLARE
+     a NUMBER;
+     b NUMBER;
+     c NUMBER;
+FUNCTION maximum(x IN NUMBER, y IN NUMBER)
+RETURN NUMBER IS
+    z NUMBER;
+BEGIN
+    IF x>y THEN
+          z:=x;
+    ELSE
+         z:=y;
+    END IF;
+    RETURN z;
+END;
+BEGIN
+     a:=700;
+     b:=70;
+     c:=maximum(a,b);
+     DBMS_OUTPUT.PUT_LINE('MAXIMUM NUMBER ='||c);
+END;
