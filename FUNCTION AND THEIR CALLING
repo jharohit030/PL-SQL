@@ -1,0 +1,15 @@
+-- FUNCTIONS
+CREATE OR REPLACE FUNCTION c_count
+RETURN NUMBER IS
+       total_cust NUMBER:=0;
+BEGIN
+     SELECT COUNT(*) INTO total_cust FROM CUSTOMER;
+     RETURN total_cust;
+END;
+--calling function
+DECLARE 
+      x NUMBER;
+BEGIN
+     x:=c_count();
+     DBMS_OUTPUT.PUT_LINE('TOTAL CUSTOMER ='||x);
+END;
