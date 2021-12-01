@@ -1,0 +1,12 @@
+--PROCEDURE : TO FIND SQUARE OF NUMBER
+DECLARE
+      a NUMBER;
+PROCEDURE Square(x IN OUT NUMBER) IS
+BEGIN
+    x:=x*x;
+END;
+BEGIN
+    a:=39;
+    Square(a);
+    DBMS_OUTPUT.PUT_LINE('SQUARE ='||a);
+END;
