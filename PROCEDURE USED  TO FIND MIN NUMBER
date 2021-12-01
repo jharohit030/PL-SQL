@@ -1,0 +1,20 @@
+--PROCEDURE : FIND MIN NUMBER
+DECLARE
+      a NUMBER;
+      b NUMBER;
+      c NUMBER;
+PROCEDURE MIN(p IN NUMBER, q IN NUMBER, r OUT NUMBER) IS
+BEGIN
+     IF p<q THEN 
+           r:=p;
+     ELSE 
+           r:=q;
+     END IF;
+END;
+
+BEGIN
+    a:=10;
+    b:=14;
+    MIN(a, b, c);
+    DBMS_OUTPUT.PUT_LINE('MINIMUM NUMBER: '||c);
+END;
